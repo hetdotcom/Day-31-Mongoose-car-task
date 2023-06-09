@@ -1,0 +1,32 @@
+Hello all 
+Here is today's task 
+
+- Connect to MongoDb via Mongoose
+- Create Collections (Brands, Cars, Sellers, Users, Transactions)
+- Cars will have a reference of Brand's Id. As cars will belong to their respective brand
+- Sellers will have a list of cars (reference to Car's Id)
+- Sellers will be at particular cities
+- Users can only buy cars from sellers located at their cities
+- When a user buys a car, transaction should be created with buyer's Id, Seller's Id and Car's Id.
+
+
+----------- After you complete the above tasks then move on to this one --------
+- There should be an API which can be accessed only by admin where admin can see the following:
+a) How many cars are sold in total
+b) In which city cars are most sold
+c) Which car is sold the most
+d) Which Brand's cars are most sold
+
+Conditions:
+- There should be at least 4 brands
+- Each brand should have at least 3 cars per brand
+- There should be at least 7 sellers at different locations
+- There should be at least 10 users per location 
+- Each seller should have cars from at least 2 brands
+
+Notes:
+- You can create same car multiple times 
+for example: There can be 5 TATA Nano cars but TATA brand should have 2 different cars other than Nano (Condition No: 2)
+
+
+Check ORM and ODM and Mongoose Docs before you start
