@@ -30,7 +30,8 @@ const addBuyer = async (req, res) => {
 
 const buyCar = async (req, res) => {
   try {
-    const iCarId = await Car.findOne({ sModel: req.body.sCar }, { _id: 1 })
+    // const iCarId = await Car.findOne({ sModel: req.body.sCar }, { _id: 1 })
+    const iCarId = await Car.findOne({ _id: req.body.sCar }, { _id: 1 })
     // console.log(iCarId, 'Car')
 
       req.body.sCar = iCarId._id

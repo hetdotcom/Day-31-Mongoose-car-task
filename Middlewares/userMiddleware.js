@@ -6,13 +6,13 @@ const Seller = require('../Schemas/sellerSchema')
 const verifyCity = async (req, res, next) => {
   try {
     const oSeller = await Seller.findOne(
-      { sSeller: req.body.sSeller },
+      { _id: req.body.sSeller },
       { _id: 1, sCity: 1 }
     )
     // console.log(oSellerId, 'Seller')
 
     const oUser = await User.findOne(
-      { sName: req.body.sBuyer },
+      { _id: req.body.sBuyer },
       { _id: 1, sCity: 1 }
     )
     // console.log(oUserId, 'User')
@@ -34,7 +34,7 @@ const verifyCity = async (req, res, next) => {
 
 const isCarPresent = async (req, res, next) => {
   try {
-    const iCarId = await Car.findOne({ sModel: req.body.sCar }, { _id: 1 })
+    const iCarId = await Car.findOne({ _id: req.body.sCar }, { _id: 1 })
 
     const oSeller = await Seller.findOne({ _id: req.body.sSeller })
     // console.log(oSeller)

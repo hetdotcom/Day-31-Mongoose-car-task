@@ -7,7 +7,7 @@ const addSeller = async (req, res) => {
     const { aCarStock } = req.body
     console.log(aCarStock)
 
-    const iCarId = await Car.find({ sModel: aCarStock }, { _id: 1 })
+    const iCarId = await Car.find({ _id: aCarStock }, { _id: 1 })
     console.log(iCarId)
 
     req.body.aCarStock = iCarId

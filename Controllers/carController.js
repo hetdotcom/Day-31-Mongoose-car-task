@@ -6,11 +6,12 @@ const Brand = require('../Schemas/brandSchema')
 const addCar = async (req, res) => {
   try {
     const iBrandId = await Brand.findOne(
-      { sBrand: req.body.oBrand },
+      { _id: req.body.iBrand },
+      // { sBrand: req.body.oBrand },
       { _id: 1 }
       )
     // console.log(iBrandId)
-    req.body.oBrand = iBrandId._id
+    req.body.iBrand = iBrandId._id
     const oCar = await new Car(req.body).save()
     console.log('oCar', oCar)
     
